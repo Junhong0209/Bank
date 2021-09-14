@@ -1,14 +1,14 @@
-// import { Router, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import './App.scss'
 
-import Main from './Components/MainPage/Main';
-import Navbar from './Components/Nav/Navbar';
+import FirstPage from './Components/FirstPage/FirstPage';
+import SignIn from "./Components/SignIn/SignIn";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Main />
+      <Route path='/' component={FirstPage} exact />
+      <Route path='/Login' component={SignIn} />
     </div>
   );
 }
