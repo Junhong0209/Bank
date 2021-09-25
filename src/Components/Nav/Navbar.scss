@@ -1,5 +1,5 @@
 #kakaoHead .static {
-  position: fixed;
+  position: relative;
 }
 
 #kakaoHead {
@@ -23,7 +23,12 @@
   height: 81px;
   background: transparent;
   min-width: 1120px;
-  font-family: Yoon750, sans-serif;
+  font-family: Yoon고딕750, sans-serif;
+
+  a {
+    float: none;
+    padding: 0;
+  }
 }
 
 .nav-content {
