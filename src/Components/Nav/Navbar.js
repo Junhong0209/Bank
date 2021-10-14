@@ -2,6 +2,7 @@ import Logo from '../../Image/logo.svg';
 import './Navbar.scss';
 
 const Navbar = () => {
+
   return (
     <div id='kakaoHead' className='static'>
       <div className='nav-global'>

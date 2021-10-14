@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 00;
+  z-index: 0;
   min-width: 828px;
   height: 81px;
   padding: 0 125px 0 170px;
@@ -29,6 +29,7 @@
 .nav-content {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: border .5s;
+  height: 80px;
 }
 
 .nav-items {
@@ -36,13 +37,12 @@
   height: 100%;
   display: block;
   font-size: 0;
-  text-align: center;
+  text-align: right;
   margin: auto;
 }
 
 .nav-logo {
   height: 80px;
-  // display: inline-block;
   float: left;
   width: 116px;
   line-height: 80px;
@@ -110,4 +110,20 @@
   background: #fff;
   text-align: center;
   -webkit-font-smoothing: antialiased;
+}
+
+.nav-item {
+  height: 80px;
+  min-width: 80px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 10px;
+  transition: border-color .5s;
+  padding: 0 10px;
+  z-index: 1;
+  font-size: 2vmin;
+  top: 3vh;
+  position: relative;
+  font-family: 'Yoon720', sans-serif;
+  font-weight: bold;
 }
