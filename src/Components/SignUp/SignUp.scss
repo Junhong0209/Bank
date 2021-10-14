@@ -1,8 +1,12 @@
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   margin: 0;
 }
 
-.login-main {
+.signup-main {
   font-family: Yoon750, sans-serif;
   position: relative;
   width: 100%;
@@ -10,18 +14,39 @@ h1 {
   margin: 0;
   background-color: #fff;
 
-  .login-main-content {
+  .signup-main-content {
     position: relative;
     max-width: 1200px;
-    height: 884px;
+    height: 834px;
     z-index: 1;
     margin: auto;
     top: 50px;
+    font-family: 'Yoon750', sans-serif;
+    font-size: 2vmin;
+    font-weight: bold;
 
     .input-form {
-      margin-left: 42%;
-      margin-right: 42%;
+      position: relative;
+      left: 42%;
       margin-bottom: 10px;
+
+      input {
+        border: 1px solid #000;
+        border-radius: 5px;
+        height: 25px;
+      }
+
+      span {
+        margin-right: 105px;
+      }
+
+      .input-title {
+        margin-bottom: 3px;
+      }
+
+      label {
+        position: absolute;
+      }
     }
 
     .form {
@@ -30,10 +55,11 @@ h1 {
   }
 }
 
-.login-main-title {
+.signup-main-title {
   font-family: Yoon750, sans-serif;
   text-align: center;
   margin-bottom: 1.5%;
+  font-size: 5vmin;
 }
 
 .background-line {
@@ -49,6 +75,64 @@ h1 {
 }
 
 .duplicate-check {
-  margin-left: 10px;
   position: absolute;
+  left: 20vmin;
+  top: 2.3vh;
+  background: #fff;
+  border: 0px;
+  border-radius: 5px;
+  font-family: Yoon750, sans-serif;
+  font-weight: bold;
+  height: 4vh;
+}
+
+.explanation {
+  font-size: 13px;
+}
+
+.select-profile-img {
+  position: absolute;
+  left: 20vmin;
+  top: -0.6vh;
+  background: #fff;
+  border: 0px;
+  border-radius: 5px;
+  font-family: Yoon750, sans-serif;
+  font-weight: bold;
+  height: 4vh;
+}
+
+input[id='cb1'] + label {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #bcbcbc;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:checked {
+    content: '\2714';
+    font-size: 12px;
+  }
+}
+
+input[id='cb1']:checked + label {
+  background-color: skyblue;
+}
+
+input[id='cb1'] {
+  display: none;
+}
+
+.submit-button {
+  position: relative;
+  left: 45%;
+  top: 4vh;
+  width: 15vmin;
+  height: 5vmin;
+  border-radius: 10px;
+  border: 0px;
+  font-family: Yoon750, sans-serif;
+  font-weight: bold;
+  background-color: #fff;
 }
