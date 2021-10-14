@@ -12,10 +12,10 @@ const FirstPage = () => {
           <p className='title-sub'>처음 방문하셨다면 회원가입을 먼저 해주세요!</p>
           <ul className='list-signup-signin'>
             <li>
-              <Link className='link-signup' to='/Signup'>회원가입</Link>
+              <Link className='link-signup' to='/signup'>회원가입</Link>
             </li>
             <li>
-              <Link className='link-signin' to='/Login'>로그인</Link>
+              <Link className='link-signin' to='/login'>로그인</Link>
             </li>
           </ul>
         </div>
