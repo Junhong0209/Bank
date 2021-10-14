@@ -114,7 +114,8 @@ const SignUp = () => {
           {/* 사진 선택 */}
           <div className='input-form'>
             <span className='input-title'>프로필 사진</span>
-            <button className='select-profile-img'>사진 선택</button> <br /><br />
+            <label className='select-img' for='input-img'><div className='select-profile-img'> 사진 선택</div></label>
+            <input id='input-img' type='file' accept='image/*' /> <br /><br />
           </div>
 
           {/* 약관 동의 */}

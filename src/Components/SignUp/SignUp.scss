@@ -91,15 +91,11 @@ h1 {
 }
 
 .select-profile-img {
-  position: absolute;
-  left: 20vmin;
-  top: -0.6vh;
-  background: #fff;
-  border: 0px;
-  border-radius: 5px;
   font-family: Yoon750, sans-serif;
   font-weight: bold;
-  height: 4vh;
+  font-size: 1.5vmin;
+  width: 3.5vw;
+  text-align: center;
 }
 
 input[id='cb1'] + label {
@@ -135,4 +131,17 @@ input[id='cb1'] {
   font-family: Yoon750, sans-serif;
   font-weight: bold;
   background-color: #fff;
+}
+
+#input-img {
+  display: none;
+}
+
+.select-img {
+  position: absolute;
+  background: #fff;
+  border-radius: 5px;
+  left: 10.2vw;
+  height: 3.5vh;
+  line-height: 3.5vh;
 }
