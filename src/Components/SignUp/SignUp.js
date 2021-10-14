@@ -9,9 +9,10 @@ const SignUp = () => {
     id: '',                          // User ID
     password: '',                    // User Password
     email: '',                       // User E-mail
-    residentRegistrationNumber: ''   // User 주민 등록 번호
+    residentRegistrationNumber: '',  // User 주민 등록 번호
+    nickName: '',                    // User 별명
   });
-  const { name, id, password, email } = inputs;
+  const { name, id, password, email, nickName } = inputs;
 
   const onChange = (e) => {
     const { name, value } = e.target
@@ -59,7 +60,7 @@ const SignUp = () => {
                 value={id} 
                 onChange={onChange}
               />
-            <button className='duplicate-check' type='submit'>중복 확인</button> <br />
+            <button className='duplicate-check' type='button'>중복 확인</button> <br />
           </div>
 
           {/* PW 입력 */}
@@ -109,6 +110,19 @@ const SignUp = () => {
               value={name} 
               onChange={onChange}
             /> <br />
+          </div>
+
+          {/* 별명 입력 */}
+          <div className='input-form'>
+            <div className='input-title'>별명</div>
+            <input 
+              name='nickName' 
+              type='text' 
+              className='input-tag' 
+              value={nickName} 
+              onChange={onChange}
+            />
+            <button className='duplicate-check' type='button'>중복 확인</button> <br />
           </div>
 
           {/* 사진 선택 */}
