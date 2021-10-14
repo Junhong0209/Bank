@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 ul, li {
@@ -10,8 +11,4 @@ a {
   float: none;
   padding: 0;
   text-decoration: none;
-}
-
-html {
-  font-family: Yoon750, sans-serif;
 }
