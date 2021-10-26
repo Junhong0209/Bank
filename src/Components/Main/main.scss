@@ -1,0 +1,113 @@
+.main {
+  position: relative;
+}
+
+.main-content {
+  position: relative;
+  max-width: 1200px;
+  height: 884px;
+  z-index: 1;
+  margin: auto;
+  font-family: 'Yoon750', sans-serif;
+}
+
+.main-content-title {
+  position: relative;
+  left: 20vw;
+  top: 5vh;
+  font-weight: bold;
+  font-size: 2.5vmin;
+}
+
+.add-account {
+  position: relative;
+  border: 1px dashed #000;
+  border-radius: 25px;
+  width: 25vw;
+  height: 20vh;
+  left: 20vw;
+  top: 6vh;
+  text-align: center;
+  line-height: 20vh;
+  font-size: 4vmin;
+}
+
+.account-title {
+  position: relative;
+  left: 20vw;
+  top: 11vh;
+  font-family: 'Yoon750', sans-serif;
+  font-weight: bold;
+  font-size: 2vmin;
+}
+
+.account-content {
+  position: relative;
+  width: 25vw;
+  height: 10vh;
+  left: 20vw;
+  top: 12vh;
+  background: #F2F2F2;
+  border-radius: 20px;
+}
+
+.account-content-img {
+  position: relative;
+  height: 5vh;
+  top: 2.2vh;
+  left: 1vw;
+  line-height: 5vh;
+}
+
+.account-bank-name {
+  position: relative;
+  left: 4vw;
+  top: -3.3vh;
+  font-size: 2vmin;
+  font-weight: bold;
+}
+
+.account-bank-amount {
+  position: relative;
+  left: 4vw;
+  top: -2.8vh;
+  font-weight: bold;
+}
+
+.account-bank-transfer-background {
+  position: relative;
+  top: -8vh;
+  left: 20.5vw;
+  width: 3.8vw;
+  height: 2.5vh;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 2.5vh;
+  font-family: 'Yoon720', sans-serif;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.account-bank-get {
+  position: relative;
+  top: -7vh;
+  left: 20.5vw;
+  width: 3.8vw;
+  height: 2.5vh;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 2.5vh;
+  font-family: 'Yoon720', sans-serif;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
