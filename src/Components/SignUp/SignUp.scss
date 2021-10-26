@@ -27,14 +27,8 @@ h1 {
 
     .input-form {
       position: relative;
-      left: 42%;
+      left: 42.5%;
       margin-bottom: 10px;
-
-      input {
-        border: 1px solid #000;
-        border-radius: 5px;
-        height: 25px;
-      }
 
       span {
         margin-right: 105px;
@@ -45,8 +39,26 @@ h1 {
         font-size: 1.5vmin;
       }
 
-      label {
-        position: absolute;
+      input[id='cb1'] + label {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #bcbcbc;
+        cursor: pointer;
+        border-radius: 50%;
+      
+        &:checked {
+          content: '\2714';
+          font-size: 12px;
+        }
+      }
+      
+      input[id='cb1']:checked + label {
+        background-color: skyblue;
+      }
+      
+      input[id='cb1'] {
+        display: none;
       }
     }
 
@@ -99,31 +111,9 @@ h1 {
   text-align: center;
 }
 
-input[id='cb1'] + label {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #bcbcbc;
-  cursor: pointer;
-  border-radius: 50%;
-
-  &:checked {
-    content: '\2714';
-    font-size: 12px;
-  }
-}
-
-input[id='cb1']:checked + label {
-  background-color: skyblue;
-}
-
-input[id='cb1'] {
-  display: none;
-}
-
 .submit-button {
   position: relative;
-  left: 45%;
+  left: 44%;
   top: 4vh;
   width: 15vmin;
   height: 5vmin;
