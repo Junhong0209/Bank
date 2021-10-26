@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import Navbar from '../Nav/Navbar';
-import './FirstPage.scss';
+import './Welcome.scss';
 
-const FirstPage = () => {
+const Welcome = () => {
   return (
     <>
       <Navbar />
@@ -25,4 +25,4 @@ const FirstPage = () => {
   );
 };
 
-export default FirstPage;
+export default Welcome;
