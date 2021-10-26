@@ -1,10 +1,10 @@
 import './App.scss'
-import Index from './Components/Index';
+import Route from './Components/route';
 
 function App() {
   return (
     <div className="App">
-      <Index />
+      <Route />
     </div>
   );
 }
