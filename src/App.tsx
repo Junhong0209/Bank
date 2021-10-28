@@ -1,4 +1,3 @@
-import './App.scss'
 import Route from './Components/route';
 
 function App() {
