@@ -1,11 +1,10 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.scss';
-import './font.scss';
+import './styles/index.scss';
+import './styles/font.scss';
 
 ReactDOM.render(
   <BrowserRouter>
