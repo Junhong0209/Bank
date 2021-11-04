@@ -1,29 +1,56 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { SignUpInput } from "src/types/SignUpInput.type";
+import { baseURL, header } from "src/api/Bank";
+
 import Navbar from "../Nav/Navbar";
-import "./SignUp.scss";
+import Swal from "sweetalert2";
+import axios from "axios";
+
+import {
+  SignUpIntroMain,
+  SignUpIntroMainContent,
+  SignUpMainTitle,
+  SignUpInputForm,
+  SignUpInputTitle,
+  SignUpInputBackground,
+  BackgroundLine,
+  SubmitButtom,
+  AgreeProvision,
+  ProvisionModal,
+  ModalCloseButton,
+  PasswordError,
+} from './SignUp.style';
+
 
 const SignUp = () => {
-  const [inputPhoneValue, setInputPhoneValue] = useState('');
-  const [inputBirthValue, setInputBirthValue] = useState('');
-  const [agreeValue, setAgreeValue] = useState(false);
-  const [inputs, setInputs] = useState({
-    name: '',                        // User Name
-    id: '',                          // User ID
-    password: '',                    // User Password
-    phoneNumber: '',  // User 주민 등록 
-    birth: '',
+  const [inputPhoneValue, setInputPhoneValue] = useState<string>('');
+  const [inputBirthValue, setInputBirthValue] = useState<string>('');
+  const [passwordChk, setPasswordChk] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [agreeValue, setAgreeValue] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [inputs, setInputs] = useState<SignUpInput>({
+    name: '',              // User 이름
+    id: '',                // User 아이디
+    password: '',          // User 비밀번호
+    phoneNumber: '',       // User 전화번호
+    birth: '',             // User 생일
   });
   const { name, id, password, birth, phoneNumber } = inputs;
 
   const onChange = (e) => {
     const { name, value } = e.target
-
     const nextInputs = {
       ...inputs,
       [name]: value,
     }
     setInputs(nextInputs);
   }
+
+  const passwordCheck = useCallback((e) => {
+    setPasswordError(e.target.value !== password);
+    setPasswordChk(e.target.value);
+  }, [password])
 
   // 전화번호 입력
   const onInputPhoneNumber = (e) => {
@@ -59,116 +86,176 @@ const SignUp = () => {
     }
   }, [inputBirthValue]);
 
-  useEffect(() => {
-    console.log(inputs);
-  }, [inputs])
+  const SIGNUP = (e) => {
+    e.preventDefault();
+    if (agreeValue === true && password === passwordChk) {
+      const data = new URLSearchParams();
+      data.append('id', id);
+      data.append('pw', password);
+      data.append('phone', phoneNumber);
+      data.append('name', name);
+      data.append('birth', birth);
 
-  const signup = () => {
-    if (agreeValue === true) {
-      alert(`${id}, ${name}, ${password}, ${phoneNumber}, ${birth}`);
+      axios.post(`${baseURL}/auth/register`, data, header)
+      .then((res) => {
+        console.log(res);
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: '회원가입이 완료 되었습니다.'
+        })
+      }).catch((error) => {
+        if (error.response.data.status === 403) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: '중복된 계정입니다. 다시 시도해주세요.'
+          })
+        }
+      })
+    } else if (password === passwordChk) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error!',
+        text: '약관 동의를 먼저 해주세요.'
+      });
     } else {
-      alert('약관 동의를 먼저 해주세요');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error!',
+        text: '비밀번호가 일치하지 않습니다.'
+      })
     }
   }
 
   const AgreeCheck = () => {
     setAgreeValue(true);
   }
+  const openModal = () => {
+    setIsOpen(true);
+  }
+  const closeModal = () => {
+    setIsOpen(false);
+  }
 
   return (
     <>
       <Navbar />
-      <div className='signup-main'>
-        <div className='signup-main-content'>
-          <h1 className='signup-main-title'>회원가입</h1>
-          <form onSubmit={signup}>
-            {/* 이름 입력 */}
-            <div className='input-form'>
-              <div className='input-title'>이름 (실명)</div>
-              <div className='input-background'>
-                <input
-                  name='name'
-                  type='text'
-                  placeholder='이름을 입력해주세요'
-                  className='name'
-                  value={name}
-                  onChange={onChange}
-                />
-              </div>
-            </div>
-            {/* ID 입력 */}
-            <div className='input-form'>
-              <div className='input-title'>아이디</div>
-              <div className='input-background'>
-                <input
-                  name='id'
-                  placeholder='아이디를 입력해주세요'
-                  value={id}
-                  onChange={onChange}
-                />
-              </div>
-            </div>
-            {/* PW 입력 */}
-            <div className='input-form'>
-              <div className='input-title'>비밀번호</div>
-              <div className='input-background'>
-                <input
-                  name='password'
-                  type="password"
-                  placeholder='비밀번호를 입력해주세요'
-                  value={password}
-                  onChange={onChange}
-                />
-              </div>
-            </div>
-            {/* 전화번호 입력 */}
-            <div className='input-form'>
-              <div className='input-title'>전화번호</div>
-              <div className='input-background'>
-                <input
-                  name='phoneNumber'
-                  type='text'
-                  placeholder='전화번호를 입력해주세요'
-                  onChange={phoneNumberHandlePress}
-                  value={inputPhoneValue}
-                  onInput={onInputPhoneNumber}
-                />
-              </div>
-            </div>
-            {/* 생일 입력 */}
-            <div className='input-form'>
-              <div className='input-title'>생년월일</div>
-              <div className='input-background'>
-                <input
-                  name='birth'
-                  type='text'
-                  placeholder='생년월일(숫자 7자리)을 입력해주세요'
-                  value={inputBirthValue}
-                  onChange={birthHanlePress}
-                  onInput={onInputBirth}
-                />
-              </div>
-            </div>
-            {/* 약관 동의 */}
-            <div className='input-form'>
-              <input onClick={AgreeCheck} type='checkbox' id='cb1' />
-              <label htmlFor='cb1' />
-              <a href='/' target='_blank' style={Agree}>약관동의</a>
-            </div>
-            <input type='submit' className='submit-button' value='회원 가입' />
-          </form>
-        </div>
-        <div className='background-line'></div>
-      </div>
+      <SignUpIntroMain>
+        <BackgroundLine>
+          <SignUpIntroMainContent>
+            <SignUpMainTitle>회원가입</SignUpMainTitle>
+            <form onSubmit={SIGNUP}>
+              {/* 이름 입력 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>이름 (실명)</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input
+                    name='name'
+                    type='text'
+                    placeholder='이름을 입력해주세요'
+                    className='name'
+                    value={name}
+                    onChange={onChange}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              {/* ID 입력 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>아이디</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input
+                    name='id'
+                    placeholder='아이디를 입력해주세요'
+                    value={id}
+                    onChange={onChange}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              {/* PW 입력 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>비밀번호</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input
+                    name='password'
+                    type="password"
+                    placeholder='비밀번호를 입력해주세요'
+                    value={password}
+                    onChange={onChange}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              {/* PW 확인 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>비밀번호 확인</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input 
+                    name='passwordchk' 
+                    type='password' 
+                    placeholder='비밀번호를 다시 입력해주세요.' 
+                    value={passwordChk}
+                    onChange={passwordCheck}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              <>
+                {
+                  passwordError && <PasswordError>* 비밀번호가 일치하지 않습니다.</PasswordError>
+                }
+              </>
+              {/* 전화번호 입력 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>전화번호</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input
+                    name='phoneNumber'
+                    type='text'
+                    placeholder='전화번호를 입력해주세요'
+                    onChange={phoneNumberHandlePress}
+                    value={inputPhoneValue}
+                    onInput={onInputPhoneNumber}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              {/* 생일 입력 */}
+              <SignUpInputForm>
+                <SignUpInputTitle>생년월일</SignUpInputTitle>
+                <SignUpInputBackground>
+                  <input
+                    name='birth'
+                    type='text'
+                    placeholder='생년월일(숫자 7자리)을 입력해주세요'
+                    value={inputBirthValue}
+                    onChange={birthHanlePress}
+                    onInput={onInputBirth}
+                  />
+                </SignUpInputBackground>
+              </SignUpInputForm>
+              {/* 약관 동의 */}
+              <SignUpInputForm>
+                <input onClick={AgreeCheck} type='checkbox' id='cb1' />
+                <label htmlFor='cb1' />
+                <AgreeProvision onClick={openModal}>약관동의</AgreeProvision>
+                <ProvisionModal isOpen={isOpen} onRequestClose={closeModal}>
+                  <h2>약관안내</h2>
+                  <div>
+                    DGSW Kakao Bank 서비스에서는 사용자의 주민등록번호 7자리 및 휴대전화번호, 이름을 수집하고 있습니다.
+                    해당 정보는 서비스를 위해 잘 쓰일 것이니 미리 감사 인사드립니다. 항상 감사합니다.
+                    DGSW Kakao Bank 서비스에서는 사용자의 주민등록번호 7자리 및 휴대전화번호, 이름을 수집하고 있습니다.
+                    해당 정보는 서비스를 위해 잘 쓰일 것이니 미리 감사 인사드립니다. 항상 감사합니다.
+                    DGSW Kakao Bank 서비스에서는 사용자의 주민등록번호 7자리 및 휴대전화번호, 이름을 수집하고 있습니다.
+                    해당 정보는 서비스를 위해 잘 쓰일 것이니 미리 감사 인사드립니다. 항상 감사합니다.
+                  </div>
+                  <ModalCloseButton onClick={closeModal}>확인</ModalCloseButton>
+                </ProvisionModal>
+              </SignUpInputForm>
+              <SubmitButtom type='submit' value='회원 가입' />
+            </form>
+          </SignUpIntroMainContent>
+        </BackgroundLine>
+      </SignUpIntroMain>
     </>
   );
-};
-
-const Agree = {
-  positon: 'absolute',
-  marginLeft: '2vw',
-  marginBottom: '1vw',
-  color: 'black'
 };
 
 export default SignUp;

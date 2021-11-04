@@ -1,26 +1,35 @@
-import { Link } from 'react-router-dom';
 import Navbar from '../Nav/Navbar';
-import './Welcome.scss';
+
+import {
+  IntroMain,
+  IntroMainContent,
+  TitleMain,
+  TitleSub,
+  ListSignupSignin,
+  SignUpLink,
+  SignInLink,
+  BackgroundLine
+} from './Welcome.style';
 
 const Welcome = () => {
   return (
     <>
       <Navbar />
-      <div className='intro-main'>
-        <div className='intro-main-content'>
-          <h3 className='title-main'>카카오뱅크에 오신 것을 환영합니다.</h3>
-          <p className='title-sub'>처음 방문하셨다면 회원가입을 먼저 해주세요!</p>
-          <ul className='list-signup-signin'>
+      <IntroMain>
+        <IntroMainContent>
+          <TitleMain>카카오뱅크에 오신 것을 환영합니다.</TitleMain>
+          <TitleSub>처음 방문하셨다면 회원가입을 먼저 해주세요!</TitleSub>
+          <ListSignupSignin>
             <li>
-              <Link className='link-signup' to='/signup'>회원가입</Link>
+              <SignUpLink to='/signup'>회원가입</SignUpLink>
             </li>
             <li>
-              <Link className='link-signin' to='/login'>로그인</Link>
+              <SignInLink to='/login'>로그인</SignInLink>
             </li>
-          </ul>
-        </div>
-        <div className='background-line'></div>
-      </div>
+          </ListSignupSignin>
+        </IntroMainContent>
+        <BackgroundLine />
+      </IntroMain>
     </>
   );
 };
