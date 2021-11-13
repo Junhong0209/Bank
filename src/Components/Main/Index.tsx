@@ -1,6 +1,6 @@
-import MainNav from "../Nav/MainNav";
-import AccountList from "./MyAccount/AccountList";
-import AddAccount from "./AddAccount/AddAcount";
+import MainNav from "src/Components/Nav/MainNav";
+import AccountList from "src/Components/Main/MyAccount/AccountList";
+import AddAccount from "src/Components/Main/AddAccount/AddAcount";
 
 import {
   IntroMain,

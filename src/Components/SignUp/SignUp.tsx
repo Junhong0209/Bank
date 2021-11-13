@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback } from "react";
-import { SignUpInput } from "src/types/SignUpInput.type";
-import { baseURL, header } from "src/api/Bank";
-
-import Navbar from "../Nav/Navbar";
+import Navbar from "src/Components/Nav/Navbar";
 import Swal from "sweetalert2";
 import axios from "axios";
+
+import { useEffect, useState, useCallback } from "react";
+import { ISignUpInput } from "src/types/SignUpInput.type";
+import { baseURL, header } from "src/api/Bank";
 
 import {
   SignUpIntroMain,
@@ -29,7 +29,7 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState<boolean>(false);
   const [agreeValue, setAgreeValue] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [inputs, setInputs] = useState<SignUpInput>({
+  const [inputs, setInputs] = useState<ISignUpInput>({
     name: '',              // User 이름
     id: '',                // User 아이디
     password: '',          // User 비밀번호

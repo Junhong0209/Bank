@@ -1,4 +1,4 @@
-import Navbar from '../Nav/Navbar';
+import Navbar from 'src/Components/Nav/Navbar';
 
 import {
   IntroMain,

@@ -1,6 +1,6 @@
-import { GrUserSettings } from 'react-icons/gr'
+import Logo from 'src/assets/Image/logo.svg';
 
-import Logo from '../../assets/Image/logo.svg';
+import { GrUserSettings } from 'react-icons/gr'
 
 import {
   KakaoHead,

@@ -1,4 +1,4 @@
-import Logo from '../../assets/Image/logo.svg';
+import Logo from 'src/assets/Image/logo.svg';
 
 import {
   KakaoHead,

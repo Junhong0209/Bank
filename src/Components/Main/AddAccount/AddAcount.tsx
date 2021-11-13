@@ -1,5 +1,5 @@
 import { GrFormAdd } from "react-icons/gr"
-import { IntroMainTitle, AddAccountForm } from "../Index.style"
+import { IntroMainTitle, AddAccountForm } from "src/Components/Main/Index.style";
 
 const AddAccount = () => {
   return (

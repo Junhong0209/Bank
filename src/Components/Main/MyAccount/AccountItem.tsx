@@ -1,6 +1,14 @@
-import KakaoBank from '../../../assets/Image/kakaoBankLogo.png';
+import KakaoBank from 'src/assets/Image/kakaoBankLogo.png';
 
-import { AccountGet, AccountTransfer, MyAccountBankMoney, MyAccountBankName, MyAccountContent, MyAccountContentImg, MyAccountNumber } from "../Index.style";
+import { 
+  AccountGet, 
+  AccountTransfer, 
+  MyAccountBankMoney, 
+  MyAccountBankName, 
+  MyAccountContent, 
+  MyAccountContentImg, 
+  MyAccountNumber 
+} from "../Index.style";
 
 const AccountItem = () => {
   return (

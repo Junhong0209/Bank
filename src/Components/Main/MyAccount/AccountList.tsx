@@ -1,4 +1,4 @@
-import AccountItem from "./AccountItem";
+import AccountItem from "src/Components/Main/MyAccount/AccountItem";
 
 import { AccountTitle } from '../Index.style';
 
