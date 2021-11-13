@@ -1,4 +1,4 @@
-export interface SignUpInput {
+export interface ISignUpInput {
   name: string,
   id: string,
   password: string,

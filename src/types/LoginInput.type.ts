@@ -1,4 +1,4 @@
-export interface LoginInput {
+export interface ILoginInput {
   id: string,
   password: string
 }
