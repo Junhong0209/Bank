@@ -1,10 +1,10 @@
 import { Route } from "react-router-dom";
 
-import Welcome from './Welcome/Welcome';
-import Main from "src/Components/Main/Index";
-import SignIn from "src/Components/SignIn/SignIn";
-import SignUp from "src/Components/SignUp/SignUp";
-import PrivateRoute from "src/Utils/CoustomRoute/PrivateRoute";
+import Welcome from 'src/components/welcome/welcome';
+import Main from "src/components/main";
+import SignIn from "src/components/signIn/signIn";
+import SignUp from "src/components/signUp/signUp";
+import PrivateRoute from "src/utils/coustomRoute/privateRoute";
 
 const Index = () => {
   return (

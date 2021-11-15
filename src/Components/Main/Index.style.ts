@@ -1,5 +1,6 @@
-import { ColorPalette } from "src/styles/ColorPalette";
 import styled from "styled-components";
+
+import { ColorPalette } from "src/styles/colorPalette";
 
 export const IntroMain = styled.div`
   position: relative;

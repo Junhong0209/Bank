@@ -40,7 +40,7 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLogo = styled.li`
-  heigh: 80px;
+  height: 80px;
   float: left;
   width: 116px;
   line-height: 80px;

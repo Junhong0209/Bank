@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Modal from 'react-modal';
 
-import { ColorPalette } from "src/styles/ColorPalette";
+import { ColorPalette } from "src/styles/colorPalette";
 
 export const SignUpIntroMain = styled.div`
   font-family: Yoon750, sans-serif;

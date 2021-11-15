@@ -1,8 +1,8 @@
-import AccountItem from "src/Components/Main/MyAccount/AccountItem";
+import AccountItem from "src/components/main/myAccount/accountItem";
 
-import { AccountTitle } from '../Index.style';
+import { AccountTitle } from '../index.style';
 
-const AccountList = () => {
+const accountList = () => {
   return (
     <>
       <AccountTitle>준홍(님)의 계좌</AccountTitle>
@@ -11,4 +11,4 @@ const AccountList = () => {
   );
 };
 
-export default AccountList
+export default accountList

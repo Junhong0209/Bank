@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ColorPalette } from "src/styles/ColorPalette";
+import { ColorPalette } from "src/styles/colorPalette";
 
 export const LoginMain = styled.div`
   font-family: Yoon750;

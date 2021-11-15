@@ -1,10 +1,10 @@
-import Navbar from "src/Components/Nav/Navbar";
+import Navbar from "src/components/nav/navbar";
 import Swal from "sweetalert2";
 import axios from "axios";
 
 import { useEffect, useState, useCallback } from "react";
-import { ISignUpInput } from "src/types/SignUpInput.type";
-import { baseURL, header } from "src/api/Bank";
+import { ISignUpInput } from "src/types/signUpInput.type";
+import { baseURL, header } from "src/config/config";
 
 import {
   SignUpIntroMain,
@@ -19,10 +19,10 @@ import {
   ProvisionModal,
   ModalCloseButton,
   PasswordError,
-} from './SignUp.style';
+} from 'src/components/signUp/signUp.style';
 
 
-const SignUp = () => {
+const signUp = () => {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>('');
   const [inputBirthValue, setInputBirthValue] = useState<string>('');
   const [passwordChk, setPasswordChk] = useState<string>('');
@@ -258,4 +258,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default signUp;

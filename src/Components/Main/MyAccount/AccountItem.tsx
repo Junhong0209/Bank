@@ -8,9 +8,9 @@ import {
   MyAccountContent, 
   MyAccountContentImg, 
   MyAccountNumber 
-} from "../Index.style";
+} from "src/components/main/index.style";
 
-const AccountItem = () => {
+const accountItem = () => {
   return (
     <MyAccountContent>
       <MyAccountContentImg src={KakaoBank} alt='은행 사진' />
@@ -27,4 +27,4 @@ const AccountItem = () => {
   );
 };
 
-export default AccountItem;
+export default accountItem;

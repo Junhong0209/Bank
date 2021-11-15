@@ -18,7 +18,7 @@ export const IntroMainContent = styled.div`
   height: 884px;
   background-image: url(${Lion});
   background-size: cover;
-  backgroudn-repeat: no-repeat;
+  background-repeat: no-repeat;
   z-index: 1;
   margin: auto;
 `;

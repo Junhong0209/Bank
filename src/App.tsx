@@ -1,10 +1,8 @@
-import Route from './Components/route';
+import Route from './components/route';
 
 function App() {
   return (
-    <div className="App">
-      <Route />
-    </div>
+    <Route />
   );
 }
 

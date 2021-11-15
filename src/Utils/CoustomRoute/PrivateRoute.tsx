@@ -1,7 +1,7 @@
 import { Route, Redirect } from 'react-router';
-import checkAuth from '../checkAuth';
+import checkAuth from 'src/utils/checkAuth';
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const privateRoute = ({component: Component, ...rest}) => {
   return (
     <Route
       {...rest}
@@ -16,4 +16,4 @@ const PrivateRoute = ({component: Component, ...rest}) => {
   )
 }
 
-export default PrivateRoute;
+export default privateRoute;

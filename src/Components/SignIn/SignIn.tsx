@@ -1,10 +1,10 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-import Navbar from "src/Components/Nav/Navbar";
+import Navbar from "src/components/nav/navbar";
 
 import { useState } from "react";
-import { baseURL, header } from "src/api/Bank";
-import { ILoginInput } from "src/types/LoginInput.type";
+import { baseURL, header } from "src/config/config";
+import { ILoginInput } from "src/types/loginInput.type";
 
 import {
   LoginMain,
@@ -15,9 +15,9 @@ import {
   LoginInputForm,
   LoginButton,
   BackgroundLine
-} from './SignIn.style';
+} from 'src/components/signIn/signIn.style';
 
-const SignIn = ({ history }) => {
+const signIn = ({ history }) => {
   const [inputs, setInputs] = useState<ILoginInput>({
     id: '',          // User ID
     password: ''     // user Password
@@ -98,4 +98,4 @@ const SignIn = ({ history }) => {
   );
 };
 
-export default SignIn;
+export default signIn;

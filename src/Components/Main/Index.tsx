@@ -1,13 +1,13 @@
-import MainNav from "src/Components/Nav/MainNav";
-import AccountList from "src/Components/Main/MyAccount/AccountList";
-import AddAccount from "src/Components/Main/AddAccount/AddAcount";
+import MainNav from "src/components/nav/mainNav";
+import AccountList from "src/components/main/myAccount/accountList";
+import AddAccount from "src/components/main/addAccount/addAcount";
 
 import {
   IntroMain,
   IntroMainContent,
-} from './Index.style';
+} from './index.style';
 
-const Main = () => {
+const main = () => {
   return (
     <>
       <MainNav />
@@ -21,4 +21,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default main;

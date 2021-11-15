@@ -1,4 +1,4 @@
-import Navbar from 'src/Components/Nav/Navbar';
+import Navbar from 'src/components/nav/navbar';
 
 import {
   IntroMain,
@@ -9,9 +9,9 @@ import {
   SignUpLink,
   SignInLink,
   BackgroundLine
-} from './Welcome.style';
+} from 'src/components/welcome/welcome.style';
 
-const Welcome = () => {
+const welcome = () => {
   return (
     <>
       <Navbar />
@@ -34,4 +34,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default welcome;

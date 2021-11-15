@@ -1,7 +1,7 @@
 import { GrFormAdd } from "react-icons/gr"
-import { IntroMainTitle, AddAccountForm } from "src/Components/Main/Index.style";
+import { IntroMainTitle, AddAccountForm } from "src/components/main/index.style";
 
-const AddAccount = () => {
+const addAccount = () => {
   return (
     <>
       <IntroMainTitle>계좌 개설하기</IntroMainTitle>
@@ -12,4 +12,4 @@ const AddAccount = () => {
   );
 };
 
-export default AddAccount;
+export default addAccount;
