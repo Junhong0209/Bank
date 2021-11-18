@@ -3,8 +3,8 @@ import App from './App';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import './styles/index.scss';
-import './styles/font.scss';
+import 'src/styles/index.scss';
+import 'src/styles/font.scss';
 
 ReactDOM.render(
   <BrowserRouter>

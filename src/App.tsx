@@ -1,4 +1,4 @@
-import Route from './components/route';
+import Route from 'src/components/route';
 
 function App() {
   return (

@@ -1,13 +1,14 @@
+import { ColorPalette } from "src/styles/colorPalette";
 import styled from "styled-components";
 
 export const KakaoHead = styled.div`
+  position: fixed;
   border: 0 none;
-  background-color: transparent;
   overflow: initial;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: 1;
   min-width: 828px;
   height: 81px;
   padding: 0 125px 0 170px;
@@ -19,7 +20,7 @@ export const NavGlobal = styled.div`
   right: 0;
   top: 0;
   height: 81px;
-  background: ransparent;
+  background: ${ColorPalette.white};
   min-width: 1120px;
   font-family: Yoon750;
 `;

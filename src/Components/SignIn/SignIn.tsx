@@ -4,7 +4,7 @@ import Navbar from "src/components/nav/navbar";
 
 import { useState } from "react";
 import { baseURL, header } from "src/config/config";
-import { ILoginInput } from "src/types/loginInput.type";
+import { ILoginInput } from "src/types/auth/loginInput.type";
 
 import {
   LoginMain,
@@ -17,7 +17,7 @@ import {
   BackgroundLine
 } from 'src/components/signIn/signIn.style';
 
-const signIn = ({ history }) => {
+const SignIn = ({ history }) => {
   const [inputs, setInputs] = useState<ILoginInput>({
     id: '',          // User ID
     password: ''     // user Password
@@ -44,7 +44,7 @@ const signIn = ({ history }) => {
 
     axios.post(`${baseURL}/auth/login`, data, header)
     .then((res) => {
-      sessionStorage.setItem('token', res.data.data.token);
+      sessionStorage.setItem('access-token', res.data.data.token);
       history.push('/main');
     }).catch((error) => {
       if (error.response.data.status === 401) {
@@ -98,4 +98,4 @@ const signIn = ({ history }) => {
   );
 };
 
-export default signIn;
+export default SignIn;

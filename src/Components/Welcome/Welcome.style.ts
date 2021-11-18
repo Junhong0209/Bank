@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Lion from 'src/assets/Image/Lion.png';
 
 export const IntroMain = styled.div`
+  padding-top: 80px;
   font-family: Yoon750;
   position: relative;
   width: 100%;
@@ -81,6 +82,7 @@ export const SignInLink = styled(Link)`
 `;
 
 export const BackgroundLine = styled.div`
+  padding-top: 80px;
   width: 100%;
   height: 720px;
   background-color: #ffef6b;

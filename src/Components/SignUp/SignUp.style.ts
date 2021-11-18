@@ -127,7 +127,6 @@ export const ProvisionModal = styled(Modal)`
 `;
 
 export const ModalCloseButton = styled.button`
-  positon: absolute;
   margin-top: 1vh;
   margin-bottom: 1vh;
   width: 3vw;
@@ -139,6 +138,7 @@ export const ModalCloseButton = styled.button`
 `;
 
 export const BackgroundLine = styled.div`
+padding-top: 80px;
   background-color: ${ColorPalette.kakao};
   width: 100%;
   height: 720px;

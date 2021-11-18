@@ -87,6 +87,7 @@ export const LoginButton = styled.button`
 `;
 
 export const BackgroundLine = styled.div`
+  padding-top: 80px;
   background-color: ${ColorPalette.kakao};
   width: 100%;
   height: 720px;

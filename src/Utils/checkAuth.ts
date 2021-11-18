@@ -1,3 +1,3 @@
-const checkAuth = () => !!sessionStorage.getItem('token');
+const checkAuth = () => !!sessionStorage.getItem('access-token');
 
 export default checkAuth;

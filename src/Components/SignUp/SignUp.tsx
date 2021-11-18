@@ -2,8 +2,8 @@ import Navbar from "src/components/nav/navbar";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-import { useEffect, useState, useCallback } from "react";
-import { ISignUpInput } from "src/types/signUpInput.type";
+import { useState, useCallback, useEffect } from "react";
+import { ISignUpInput } from "src/types/auth/signUpInput.type";
 import { baseURL, header } from "src/config/config";
 
 import {
@@ -21,8 +21,7 @@ import {
   PasswordError,
 } from 'src/components/signUp/signUp.style';
 
-
-const signUp = () => {
+const SignUp = () => {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>('');
   const [inputBirthValue, setInputBirthValue] = useState<string>('');
   const [passwordChk, setPasswordChk] = useState<string>('');
@@ -258,4 +257,4 @@ const signUp = () => {
   );
 };
 
-export default signUp;
+export default SignUp;

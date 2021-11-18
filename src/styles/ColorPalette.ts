@@ -1,4 +1,4 @@
-import { IColorPalette } from '../types/theme.type';
+import { IColorPalette } from 'src/types/theme.type';
 
 export const ColorPalette: IColorPalette = {
   kakao: '#FFEF6B',

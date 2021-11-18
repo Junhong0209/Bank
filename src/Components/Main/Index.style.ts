@@ -4,6 +4,7 @@ import { ColorPalette } from "src/styles/colorPalette";
 
 export const IntroMain = styled.div`
   position: relative;
+  padding-top: 80px;
 `;
 
 export const IntroMainContent = styled.div`

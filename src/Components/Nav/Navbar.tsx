@@ -8,9 +8,9 @@ import {
   NavLogo,
   KakaoLogo,
   KakaoLogoImg
-} from 'src/components/nav/Nav.style';
+} from 'src/components/nav/nav.style';
 
-const navbar = () => {
+const Navbar = () => {
 
   return (
     <KakaoHead className='static'>
@@ -27,4 +27,4 @@ const navbar = () => {
   );
 }
 
-export default navbar;
+export default Navbar;
