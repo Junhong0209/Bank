@@ -1,10 +1,9 @@
-import axios from "axios";
-import Swal from "sweetalert2";
 import Navbar from "src/components/nav/navbar";
 
 import { useState } from "react";
-import { baseURL, header } from "src/config/config";
+import { errorSwal } from "src/lib/SweetAlert/alert";
 import { ILoginInput } from "src/types/auth/loginInput.type";
+import { handleLogin } from "src/lib/api/auth/login.api";
 
 import {
   LoginMain,
@@ -42,17 +41,14 @@ const SignIn = ({ history }) => {
     data.append('id', id);
     data.append('pw', password);
 
-    axios.post(`${baseURL}/auth/login`, data, header)
-    .then((res) => {
-      sessionStorage.setItem('access-token', res.data.data.token);
+    const response = handleLogin(data);
+    response.then((res) => {
+      sessionStorage.setItem('access_token', res.data.token);
+      sessionStorage.setItem('refresh_token', res.data.refreshToken);
       history.push('/main');
     }).catch((error) => {
       if (error.response.data.status === 401) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error!',
-          text: 'ID 또는 PW가 일치하지 않습니다.'
-        })
+        errorSwal('ID 또는 PW가 일치하지 않습니다.');
       }
     })
   }

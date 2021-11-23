@@ -1,10 +1,9 @@
 import Navbar from "src/components/nav/navbar";
-import Swal from "sweetalert2";
-import axios from "axios";
 
-import { useState, useCallback, useEffect } from "react";
 import { ISignUpInput } from "src/types/auth/signUpInput.type";
-import { baseURL, header } from "src/config/config";
+import { handleRegister } from "src/lib/api/auth/register.api";
+import { errorSwal, succsessSwal } from "src/lib/SweetAlert/alert";
+import { useState, useCallback, useEffect } from "react";
 
 import {
   SignUpIntroMain,
@@ -95,35 +94,18 @@ const SignUp = () => {
       data.append('name', name);
       data.append('birth', birth);
 
-      axios.post(`${baseURL}/auth/register`, data, header)
-      .then((res) => {
-        console.log(res);
-        Swal.fire({
-          icon: 'success',
-          title: 'Success!',
-          text: '회원가입이 완료 되었습니다.'
-        })
+      const response: Promise<object> = handleRegister(data);
+      response.then((res) => {
+        succsessSwal('회원가입이 완료 되었습니다.');
       }).catch((error) => {
         if (error.response.data.status === 403) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error!',
-            text: '중복된 계정입니다. 다시 시도해주세요.'
-          })
+          errorSwal('중복된 계정입니다. 다시 시도해주세요.');
         }
       })
     } else if (password === passwordChk) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error!',
-        text: '약관 동의를 먼저 해주세요.'
-      });
+      errorSwal('약관 동의를 먼저 해주세요.');
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error!',
-        text: '비밀번호가 일치하지 않습니다.'
-      })
+      errorSwal('비밀번호가 일치하지 않습니다.');
     }
   }
 
