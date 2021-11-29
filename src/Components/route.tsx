@@ -11,10 +11,10 @@ import PrivateRoute from "src/utils/coustomRoute/privateRoute";
 const Index = () => {
   return (
     <>
-      <Route exact path='/' component={WelcomePage} />
-      <Route exact path='/login' component={LoginPage} />
-      <Route exact path='/signup' component={RegisterPage} />
-      <Route exact path='/addAccount' component={AddAccountPage} />
+      <Route component={WelcomePage} path='/' exact />
+      <Route component={LoginPage} path='/login' exact />
+      <Route component={RegisterPage} path='/signup' exact />
+      <PrivateRoute component={AddAccountPage} path='/addAccount' exact />
       <PrivateRoute component={MainPage} path='/main' exact />
     </>
   );

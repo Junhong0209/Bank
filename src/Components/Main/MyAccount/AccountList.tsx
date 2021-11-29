@@ -10,12 +10,14 @@ const AccountList = (props) => {
   const [name, setName] = useState<string>('');
 
   useEffect(() => {
-    getUserInfo().then(res => {
-      setName(res.data.name);
-    }).catch(err => {
-      ErrorToast('계정 정보를 가져오는데 실패하였습니다');
-    })
-  })
+    setTimeout(() => {
+      getUserInfo().then(res => {
+        setName(res.data.name);
+      }).catch(err => {
+        ErrorToast('계정 정보를 가져오는데 실패하였습니다');
+      })
+    }, 1000);
+  }, []);
 
   return (
     <>

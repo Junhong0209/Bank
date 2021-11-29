@@ -1,15 +1,15 @@
 import Toast from "./Toast"
 
-export const SuccsessToast = (title: string) => {
+export const SuccsessToast = (text: string) => {
   Toast.fire({
     icon: 'success',
-    title: `${title}`
+    text: `${text}`
   });
 };
 
-export const ErrorToast = (title: string) => {
+export const ErrorToast = (text: string) => {
   Toast.fire({
     icon: 'error',
-    title: `${title}`
+    text: `${text}`
   });
 };

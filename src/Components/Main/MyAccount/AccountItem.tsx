@@ -3,15 +3,31 @@ import makeMoneyComma from 'src/utils/makeMoneyComma';
 import makeAccountNumber from 'src/utils/makeAccountNumber';
 
 import * as S from "src/components/main/index.style";
+import { ErrorToast, SuccsessToast } from 'src/lib/SweetAlert';
 
 const accountItem = ({ myAccount }) => {
   const { accountId, money } = myAccount;
+
+  const copyAccountNumber = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      SuccsessToast('계좌번호가 복사 되었습니다!');
+    } catch (error) {
+      ErrorToast('계좌번호가 복사 되지않았습니다!');
+    }
+  }
 
   return (
     <S.MyAccountContent>
       <S.MyAccountContentImg src={KakaoBank} alt='은행 사진' />
       <S.MyAccountBankName>카카오뱅크</S.MyAccountBankName>
-      <S.MyAccountNumber>{makeAccountNumber(accountId)}</S.MyAccountNumber>
+      <S.MyAccountNumber 
+        onClick={() => 
+          copyAccountNumber(accountId)
+        }
+      >
+        {makeAccountNumber(accountId)}
+      </S.MyAccountNumber>
       <S.MyAccountBankMoney>{makeMoneyComma(money)}원</S.MyAccountBankMoney>
       <S.AccountGet>
         <a href='/main' title='가져오러 가기'>가져오기</a>
