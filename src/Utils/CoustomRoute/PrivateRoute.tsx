@@ -1,5 +1,6 @@
-import { Route, Redirect } from 'react-router';
 import checkAuth from 'src/utils/checkAuth';
+
+import { Route, Redirect } from 'react-router';
 
 const privateRoute = ({component: Component, ...rest}) => {
   return (

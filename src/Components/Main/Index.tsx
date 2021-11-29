@@ -1,12 +1,10 @@
 import AccountList from "src/components/main/MyAccount/accountList";
 import AddAccountFrom from "src/components/main/AddAccount/addAcountForm";
 
-import {
-  IntroMain,
-  IntroMainContent,
-} from 'src/components/main/index.style';
 import { useEffect, useState } from "react";
 import { handleGetMyAccount } from "src/lib/api/accont/index.api";
+
+import * as S from 'src/components/main/index.style';
 
 const Main = ({ history }) => {
   const [myAccountList, setMyAccountList] = useState<[]>();
@@ -21,12 +19,12 @@ const Main = ({ history }) => {
   
   return (
     <>
-      <IntroMain>
-        <IntroMainContent>
+      <S.IntroMain>
+        <S.IntroMainContent>
           <AddAccountFrom history={history} />
           <AccountList myAccountList={myAccountList} />
-        </IntroMainContent>
-      </IntroMain>
+        </S.IntroMainContent>
+      </S.IntroMain>
     </>
   );
 };

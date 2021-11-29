@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { SERVER } from "src/config/config";
 
 export const CustomAxios = axios.create({

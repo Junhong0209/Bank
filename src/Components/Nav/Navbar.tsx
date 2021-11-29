@@ -1,29 +1,21 @@
 import Logo from 'src/assets/Image/logo.svg';
 
-import {
-  KakaoHead,
-  NavGlobal,
-  NavContent,
-  NavItems,
-  NavLogo,
-  KakaoLogo,
-  KakaoLogoImg
-} from 'src/components/Nav/nav.style';
+import * as S from 'src/components/Nav/nav.style';
 
 const Navbar = () => {
 
   return (
-    <KakaoHead className='static'>
-      <NavGlobal>
-        <NavContent>
-          <NavItems>
-            <NavLogo>
-              <KakaoLogo href='/'><KakaoLogoImg src={Logo} alt='kakaobank' /></KakaoLogo>
-            </NavLogo>
-          </NavItems>
-        </NavContent>
-      </NavGlobal>
-    </KakaoHead>
+    <S.KakaoHead className='static'>
+      <S.NavGlobal>
+        <S.NavContent>
+          <S.NavItems>
+            <S.NavLogo>
+              <S.KakaoLogo href='/'><S.KakaoLogoImg src={Logo} alt='kakaobank' /></S.KakaoLogo>
+            </S.NavLogo>
+          </S.NavItems>
+        </S.NavContent>
+      </S.NavGlobal>
+    </S.KakaoHead>
   );
 }
 

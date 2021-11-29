@@ -1,11 +1,10 @@
-import Navbar from "src/components/Nav/navbar";
 import useInput from "src/hooks/useInput";
 
 import { useEffect } from "react";
 import { handleOpenAccount } from "src/lib/api/accont/index.api";
+import { ErrorToast, SuccsessToast } from "src/lib/SweetAlert";
 
 import * as S from "src/components/main/AddAccount/addAccount.style";
-import { ErrorToast, SuccsessToast } from "src/lib/SweetAlert";
 
 const AddAccount = ({ history }) => {
   const [accountName, onChangeAccountName] = useInput<string>('');
@@ -32,7 +31,6 @@ const AddAccount = ({ history }) => {
 
   return (
     <>
-      <Navbar />
       <S.Background onSubmit={OpenAccount}>
         <S.MainTitle>계좌 개설하기</S.MainTitle>
           <S.AccountName>계좌 이름</S.AccountName>
