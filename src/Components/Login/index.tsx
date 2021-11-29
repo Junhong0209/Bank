@@ -1,20 +1,9 @@
-import Navbar from "src/components/Nav/navbar";
-
 import { useState } from "react";
 import { errorSwal } from "src/lib/SweetAlert/alert";
-import { ILoginInput } from "src/types/auth/loginInput.type";
+import { ILoginInput, ILoginPost } from "src/types/auth/index.type";
 import { handleLogin } from "src/lib/api/auth/login.api";
 
-import {
-  LoginMain,
-  LoginMainContet,
-  LoginMainTitle,
-  LoginInputTitle,
-  LoginInputBackground,
-  LoginInputForm,
-  LoginButton,
-  BackgroundLine
-} from 'src/components/Login/index.style';
+import * as S from 'src/components/Login/index.style';
 
 const SignIn = ({ history }) => {
   const [inputs, setInputs] = useState<ILoginInput>({
@@ -37,12 +26,12 @@ const SignIn = ({ history }) => {
   const LOGIN = (e) => {
     e.preventDefault();
 
-    const data = new URLSearchParams();
-    data.append('id', id);
-    data.append('pw', password);
+    const data: ILoginPost = {
+      'id': id,
+      'pw': password
+    }
 
-    const response = handleLogin(data);
-    response.then((res) => {
+    handleLogin(data).then((res) => {
       sessionStorage.setItem('access_token', res.data.token);
       sessionStorage.setItem('refresh_token', res.data.refreshToken);
       history.push('/main');
@@ -55,15 +44,14 @@ const SignIn = ({ history }) => {
 
   return (
     <>
-      <Navbar />
-      <LoginMain>
-        <BackgroundLine>
-          <LoginMainContet>
-            <LoginMainTitle>로그인</LoginMainTitle>
+      <S.LoginMain>
+        <S.BackgroundLine>
+          <S.LoginMainContet>
+            <S.LoginMainTitle>로그인</S.LoginMainTitle>
             <form onSubmit={LOGIN}>
-              <LoginInputForm>
-                <LoginInputTitle>아이디</LoginInputTitle>
-                <LoginInputBackground>
+              <S.LoginInputForm>
+                <S.LoginInputTitle>아이디</S.LoginInputTitle>
+                <S.LoginInputBackground>
                   <input 
                     type='text'
                     name='id'
@@ -71,11 +59,11 @@ const SignIn = ({ history }) => {
                     value={id} 
                     onChange={onChange} 
                   />
-                </LoginInputBackground>
-              </LoginInputForm>
-              <LoginInputForm>
-                <LoginInputTitle>비밀번호</LoginInputTitle>
-                <LoginInputBackground>
+                </S.LoginInputBackground>
+              </S.LoginInputForm>
+              <S.LoginInputForm>
+                <S.LoginInputTitle>비밀번호</S.LoginInputTitle>
+                <S.LoginInputBackground>
                   <input 
                     type='password'
                     name='password'
@@ -83,13 +71,13 @@ const SignIn = ({ history }) => {
                     value={password} 
                     onChange={onChange} 
                   />
-                </LoginInputBackground>
-              </LoginInputForm>
-              <LoginButton type='submit'>로그인</LoginButton>
+                </S.LoginInputBackground>
+              </S.LoginInputForm>
+              <S.LoginButton type='submit'>로그인</S.LoginButton>
             </form>
-          </LoginMainContet>
-        </BackgroundLine>
-      </LoginMain>
+          </S.LoginMainContet>
+        </S.BackgroundLine>
+      </S.LoginMain>
     </>
   );
 };

@@ -7,7 +7,7 @@ import {
   SignUpLink,
   SignInLink,
   BackgroundLine
-} from 'src/components/Welcome/index.styles';
+} from 'src/components/Welcome/index.style';
 
 const Welcome = () => {
   return (

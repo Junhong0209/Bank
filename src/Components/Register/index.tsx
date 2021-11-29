@@ -1,24 +1,9 @@
-import Navbar from "src/components/Nav/navbar";
-
-import { ISignUpInput } from "src/types/auth/signUpInput.type";
+import { IRegisterInput, IRegisterPost } from "src/types/auth/index.type";
 import { handleRegister } from "src/lib/api/auth/register.api";
 import { errorSwal, succsessSwal } from "src/lib/SweetAlert/alert";
 import { useState, useCallback, useEffect } from "react";
 
-import {
-  SignUpIntroMain,
-  SignUpIntroMainContent,
-  SignUpMainTitle,
-  SignUpInputForm,
-  SignUpInputTitle,
-  SignUpInputBackground,
-  BackgroundLine,
-  SubmitButtom,
-  AgreeProvision,
-  ProvisionModal,
-  ModalCloseButton,
-  PasswordError,
-} from 'src/components/Register/index.style';
+import * as S from 'src/components/Register/index.style';
 
 const Register = () => {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>('');
@@ -27,7 +12,7 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState<boolean>(false);
   const [agreeValue, setAgreeValue] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [inputs, setInputs] = useState<ISignUpInput>({
+  const [inputs, setInputs] = useState<IRegisterInput>({
     name: '',              // User 이름
     id: '',                // User 아이디
     password: '',          // User 비밀번호
@@ -87,15 +72,15 @@ const Register = () => {
   const SIGNUP = (e) => {
     e.preventDefault();
     if (agreeValue === true && password === passwordChk) {
-      const data = new URLSearchParams();
-      data.append('id', id);
-      data.append('pw', password);
-      data.append('phone', phoneNumber);
-      data.append('name', name);
-      data.append('birth', birth);
+      const data: IRegisterPost = {
+        'id': id,
+        'pw': password,
+        'phone': phoneNumber,
+        'name': name,
+        'birth': birth
+      }
 
-      const response: Promise<object> = handleRegister(data);
-      response.then((res) => {
+      handleRegister(data).then((res) => {
         succsessSwal('회원가입이 완료 되었습니다.');
       }).catch((error) => {
         if (error.response.data.status === 403) {
@@ -121,16 +106,15 @@ const Register = () => {
 
   return (
     <>
-      <Navbar />
-      <SignUpIntroMain>
-        <BackgroundLine>
-          <SignUpIntroMainContent>
-            <SignUpMainTitle>회원가입</SignUpMainTitle>
+      <S.SignUpIntroMain>
+        <S.BackgroundLine>
+          <S.SignUpIntroMainContent>
+            <S.SignUpMainTitle>회원가입</S.SignUpMainTitle>
             <form onSubmit={SIGNUP}>
               {/* 이름 입력 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>이름 (실명)</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>이름 (실명)</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input
                     name='name'
                     type='text'
@@ -139,24 +123,24 @@ const Register = () => {
                     value={name}
                     onChange={onChange}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               {/* ID 입력 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>아이디</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>아이디</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input
                     name='id'
                     placeholder='아이디를 입력해주세요'
                     value={id}
                     onChange={onChange}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               {/* PW 입력 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>비밀번호</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>비밀번호</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input
                     name='password'
                     type="password"
@@ -164,12 +148,12 @@ const Register = () => {
                     value={password}
                     onChange={onChange}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               {/* PW 확인 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>비밀번호 확인</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>비밀번호 확인</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input 
                     name='passwordchk' 
                     type='password' 
@@ -177,17 +161,17 @@ const Register = () => {
                     value={passwordChk}
                     onChange={passwordCheck}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               <>
                 {
-                  passwordError && <PasswordError>* 비밀번호가 일치하지 않습니다.</PasswordError>
+                  passwordError && <S.PasswordError>* 비밀번호가 일치하지 않습니다.</S.PasswordError>
                 }
               </>
               {/* 전화번호 입력 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>전화번호</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>전화번호</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input
                     name='phoneNumber'
                     type='text'
@@ -196,12 +180,12 @@ const Register = () => {
                     value={inputPhoneValue}
                     onInput={onInputPhoneNumber}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               {/* 생일 입력 */}
-              <SignUpInputForm>
-                <SignUpInputTitle>생년월일</SignUpInputTitle>
-                <SignUpInputBackground>
+              <S.SignUpInputForm>
+                <S.SignUpInputTitle>생년월일</S.SignUpInputTitle>
+                <S.SignUpInputBackground>
                   <input
                     name='birth'
                     type='text'
@@ -210,14 +194,14 @@ const Register = () => {
                     onChange={birthHanlePress}
                     onInput={onInputBirth}
                   />
-                </SignUpInputBackground>
-              </SignUpInputForm>
+                </S.SignUpInputBackground>
+              </S.SignUpInputForm>
               {/* 약관 동의 */}
-              <SignUpInputForm>
+              <S.SignUpInputForm>
                 <input onClick={AgreeCheck} type='checkbox' id='cb1' />
                 <label htmlFor='cb1' />
-                <AgreeProvision onClick={openModal}>약관동의</AgreeProvision>
-                <ProvisionModal isOpen={isOpen} onRequestClose={closeModal}>
+                <S.AgreeProvision onClick={openModal}>약관동의</S.AgreeProvision>
+                <S.ProvisionModal isOpen={isOpen} onRequestClose={closeModal}>
                   <h2>약관안내</h2>
                   <div>
                     DGSW Kakao Bank 서비스에서는 사용자의 주민등록번호 7자리 및 휴대전화번호, 이름을 수집하고 있습니다.
@@ -227,14 +211,14 @@ const Register = () => {
                     DGSW Kakao Bank 서비스에서는 사용자의 주민등록번호 7자리 및 휴대전화번호, 이름을 수집하고 있습니다.
                     해당 정보는 서비스를 위해 잘 쓰일 것이니 미리 감사 인사드립니다. 항상 감사합니다.
                   </div>
-                  <ModalCloseButton onClick={closeModal}>확인</ModalCloseButton>
-                </ProvisionModal>
-              </SignUpInputForm>
-              <SubmitButtom type='submit' value='회원 가입' />
+                  <S.ModalCloseButton onClick={closeModal}>확인</S.ModalCloseButton>
+                </S.ProvisionModal>
+              </S.SignUpInputForm>
+              <S.SubmitButtom type='submit' value='회원 가입' />
             </form>
-          </SignUpIntroMainContent>
-        </BackgroundLine>
-      </SignUpIntroMain>
+          </S.SignUpIntroMainContent>
+        </S.BackgroundLine>
+      </S.SignUpIntroMain>
     </>
   );
 };
