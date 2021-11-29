@@ -1,11 +1,11 @@
 import AddAccount from "src/components/main/AddAccount/addAccount"
 import Navbar from "src/components/Nav/navbar"
 
-const AddAccountPage = () => {
+const AddAccountPage = ({ history }) => {
   return (
     <>
       <Navbar />
-      <AddAccount />
+      <AddAccount history={history} />
     </>
   );
 };

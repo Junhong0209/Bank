@@ -48,8 +48,7 @@ export const MyAccountContent = styled.div`
   position: relative;
   width: 25vw;
   height: 12vh;
-  left: 20vw;
-  top: 12vh;
+  margin-bottom: 4vh;
   background: #F2F2F2;
   border-radius: 20px;
 `;
@@ -82,16 +81,16 @@ export const MyAccountNumber = styled.div`
 
 export const MyAccountBankMoney = styled.div`
   position: relative;
-  float: right;
-  right: 34.5vmin;
+  float: left;
+  left: 8vmin;
   top: -2vmin;
   font-weight: bold;
 `;
 
 export const AccountTransfer = styled.div`
   position: relative;
-  right: -3vmin;
-  top: -2vmin;
+  left: 31vmin;
+  top: -4.5vmin;
   width: 3.8vw;
   height: 2.5vh;
   background: #fff;
@@ -100,7 +99,6 @@ export const AccountTransfer = styled.div`
   line-height: 2.5vh;
   font-family: 'Yoon720', sans-serif;
   font-weight: bold;
-  float: right;
 
   a {
     text-decoration: none;
@@ -110,7 +108,7 @@ export const AccountTransfer = styled.div`
 
 export const AccountGet = styled.div`
   position: relative;
-  right: -4.5vmin;
+  left: 40vmin;
   top: -2vmin;
   width: 3.8vw;
   height: 2.5vh;
@@ -120,10 +118,18 @@ export const AccountGet = styled.div`
   line-height: 2.5vh;
   font-family: 'Yoon720', sans-serif;
   font-weight: bold;
-  float: right;
 
   a {
+    position: relative;
+    top: -2vmin;
     text-decoration: none;
     color: #000;
   }
+`;
+
+export const MyAccountList = styled.div`
+  position: relative;
+  width: 25vw;
+  left: 20vw;
+  top: 12vh;
 `;

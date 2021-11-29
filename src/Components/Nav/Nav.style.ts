@@ -1,5 +1,6 @@
 import { ColorPalette } from "src/styles/colorPalette";
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const KakaoHead = styled.div`
   position: fixed;
@@ -48,7 +49,7 @@ export const NavLogo = styled.li`
   position: relatrive;
 `;
 
-export const NavItem = styled.li`
+export const NavItem = styled(Link)`
   height: 80px;
   min-width: 80px;
   box-sizing: border-box;
@@ -60,6 +61,8 @@ export const NavItem = styled.li`
   position: relative;
   font-family: Yoon720;
   font-weight: bold;
+  text-decoration: none;
+  color: ${ColorPalette.black};
 `;
 
 export const KakaoLogo = styled.a`

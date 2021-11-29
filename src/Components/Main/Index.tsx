@@ -1,24 +1,34 @@
-import MainNav from "src/components/nav/mainNav";
-import AccountList from "src/components/main/myAccount/accountList";
-import AddAccount from "src/components/main/addAccount/addAcount";
+import AccountList from "src/components/main/MyAccount/accountList";
+import AddAccountFrom from "src/components/main/AddAccount/addAcountForm";
 
 import {
   IntroMain,
   IntroMainContent,
-} from './index.style';
+} from 'src/components/main/index.style';
+import { useEffect, useState } from "react";
+import { handleGetMyAccount } from "src/lib/api/accont/index.api";
 
-const main = () => {
+const Main = ({ history }) => {
+  const [myAccountList, setMyAccountList] = useState<[]>();
+
+  useEffect(() => {
+    handleGetMyAccount().then((res) => {
+      setMyAccountList(res.data);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }, []);
+  
   return (
     <>
-      <MainNav />
       <IntroMain>
         <IntroMainContent>
-          <AddAccount />
-          <AccountList />
+          <AddAccountFrom history={history} />
+          <AccountList myAccountList={myAccountList} />
         </IntroMainContent>
       </IntroMain>
     </>
   );
 };
 
-export default main;
+export default Main;

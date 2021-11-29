@@ -2,40 +2,31 @@ import Logo from 'src/assets/Image/logo.svg';
 
 import { GrUserSettings } from 'react-icons/gr'
 
-import {
-  KakaoHead,
-  NavGlobal,
-  NavContent,
-  NavItems,
-  NavItem,
-  NavLogo,
-  KakaoLogo,
-  KakaoLogoImg
-} from 'src/components/Nav/nav.style';
+import * as S from 'src/components/Nav/nav.style';
 
 const mainNav = () => {
 
   return (
-    <KakaoHead className='static'>
-      <NavGlobal>
-        <NavContent>
-          <NavItems>
-            <NavLogo>
-              <KakaoLogo href='/'><KakaoLogoImg src={Logo} alt='kakaobank' /></KakaoLogo>
-            </NavLogo>
-            <NavItem>
+    <S.KakaoHead className='static'>
+      <S.NavGlobal>
+        <S.NavContent>
+          <S.NavItems>
+            <S.NavLogo>
+              <S.KakaoLogo href='/'><S.KakaoLogoImg src={Logo} alt='kakaobank' /></S.KakaoLogo>
+            </S.NavLogo>
+            <S.NavItem to='/addAccount'>
               계좌 개설
-            </NavItem>
-            <NavItem>
+            </S.NavItem>
+            <S.NavItem>
               계좌 추가
-            </NavItem>
-            <NavItem>
+            </S.NavItem>
+            <S.NavItem>
               <GrUserSettings />
-            </NavItem>
-          </NavItems>
-        </NavContent>
-      </NavGlobal>
-    </KakaoHead>
+            </S.NavItem>
+          </S.NavItems>
+        </S.NavContent>
+      </S.NavGlobal>
+    </S.KakaoHead>
   );
 }
 

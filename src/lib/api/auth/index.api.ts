@@ -14,3 +14,9 @@ export const handleLogin = async (req: object) => {
   return data;
 }
 
+export const getUserInfo = async () => {
+  const url: string = '/user/my';
+  const { data } = await CustomAxios.get(url);
+
+  return data;
+}
