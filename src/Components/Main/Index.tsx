@@ -1,10 +1,10 @@
 import AccountList from "src/components/MyAccount/accountList";
-import AddAccountFrom from "src/components/AddAccount/addAcountForm";
+import AddAccountFrom from "src/components/AddMyAccount/addAcountForm";
 
 import { useEffect, useState } from "react";
 import { handleGetMyAccount } from "src/lib/api/accont/index.api";
 
-import * as S from 'src/components/main/index.style';
+import * as S from 'src/components/Main/index.style';
 
 const Main = ({ history }) => {
   const [myAccountList, setMyAccountList] = useState<[]>();

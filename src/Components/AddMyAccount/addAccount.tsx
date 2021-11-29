@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { handleOpenAccount } from "src/lib/api/accont/index.api";
 import { ErrorToast, SuccsessToast } from "src/lib/SweetAlert";
 
-import * as S from "src/components/AddAccount/addAccount.style";
+import * as S from "src/components/AddMyAccount/addAccount.style";
 
 const AddAccount = ({ history }) => {
   const [accountName, onChangeAccountName] = useInput<string>('');

@@ -1,5 +1,5 @@
 import MainNav from "src/components/Nav/mainNav";
-import Main from "src/components/main/index";
+import Main from "src/components/Main/index";
 
 const MainPage = ({ history }) => {
   return (
