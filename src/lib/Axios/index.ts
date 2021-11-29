@@ -5,6 +5,6 @@ export const CustomAxios = axios.create({
   baseURL: SERVER,
   headers: {
     'Access-Control-Allow-Origin': '*',
-    Authorization: `Bearer ${sessionStorage.getItem('access-token')}`
+    Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
   }
 })
