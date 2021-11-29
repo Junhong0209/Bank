@@ -1,18 +1,21 @@
 import { Route } from "react-router-dom";
 
-import Welcome from 'src/components/welcome/welcome';
-import Main from "src/components/main";
-import SignIn from "src/components/signIn/signIn";
-import SignUp from "src/components/signUp/signUp";
+import AddAccountPage from "src/pages/AddAccountPage";
+import LoginPage from "src/pages/LoginPage";
+import MainPage from "src/pages/MainPage";
+import RegisterPage from "src/pages/RegisterPage";
+import WelcomePage from "src/pages/WelcomePage";
+
 import PrivateRoute from "src/utils/coustomRoute/privateRoute";
 
 const Index = () => {
   return (
     <>
-      <Route exact path='/' component={Welcome} />
-      <Route exact path='/login' component={SignIn} />
-      <Route exact path='/signup' component={SignUp} />
-      <PrivateRoute component={Main} path='/main' exact />
+      <Route exact path='/' component={WelcomePage} />
+      <Route exact path='/login' component={RegisterPage} />
+      <Route exact path='/signup' component={LoginPage} />
+      <Route exact path='/addAccount' component={AddAccountPage} />
+      <PrivateRoute component={MainPage} path='/main' exact />
     </>
   );
 };

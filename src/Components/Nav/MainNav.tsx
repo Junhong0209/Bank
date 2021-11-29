@@ -11,7 +11,7 @@ import {
   NavLogo,
   KakaoLogo,
   KakaoLogoImg
-} from 'src/components/nav/nav.style';
+} from 'src/components/Nav/nav.style';
 
 const mainNav = () => {
 
