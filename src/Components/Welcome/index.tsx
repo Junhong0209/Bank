@@ -17,10 +17,10 @@ const Welcome = () => {
         <TitleSub>처음 방문하셨다면 회원가입을 먼저 해주세요!</TitleSub>
         <ListSignupSignin>
           <li>
-            <SignUpLink to='/signup'>회원가입</SignUpLink>
+            <SignInLink to='/login'>로그인</SignInLink>
           </li>
           <li>
-            <SignInLink to='/login'>로그인</SignInLink>
+            <SignUpLink to='/signup'>회원가입</SignUpLink>
           </li>
         </ListSignupSignin>
       </IntroMainContent>

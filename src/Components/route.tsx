@@ -12,8 +12,8 @@ const Index = () => {
   return (
     <>
       <Route exact path='/' component={WelcomePage} />
-      <Route exact path='/login' component={RegisterPage} />
-      <Route exact path='/signup' component={LoginPage} />
+      <Route exact path='/login' component={LoginPage} />
+      <Route exact path='/signup' component={RegisterPage} />
       <Route exact path='/addAccount' component={AddAccountPage} />
       <PrivateRoute component={MainPage} path='/main' exact />
     </>
