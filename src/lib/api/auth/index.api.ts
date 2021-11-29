@@ -6,3 +6,11 @@ export const handleRegister = async (req: object) => {
 
   return data;
 }
+
+export const handleLogin = async (req: object) => {
+  const url: string = '/auth/login';
+  const { data } = await CustomAxios.post(url, req);
+
+  return data;
+}
+
