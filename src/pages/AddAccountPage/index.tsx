@@ -1,4 +1,4 @@
-import AddAccount from "src/components/main/AddAccount/addAccount"
+import AddAccount from "src/components/AddAccount/addAccount"
 import Navbar from "src/components/Nav/navbar"
 
 const AddAccountPage = ({ history }) => {

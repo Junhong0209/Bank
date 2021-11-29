@@ -2,8 +2,9 @@ import KakaoBank from 'src/assets/Image/kakaoBankLogo.png';
 import makeMoneyComma from 'src/utils/makeMoneyComma';
 import makeAccountNumber from 'src/utils/makeAccountNumber';
 
-import * as S from "src/components/main/index.style";
 import { ErrorToast, SuccsessToast } from 'src/lib/SweetAlert';
+
+import * as S from "src/components/MyAccount/index.style";
 
 const accountItem = ({ myAccount }) => {
   const { accountId, money } = myAccount;

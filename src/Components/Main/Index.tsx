@@ -1,5 +1,5 @@
-import AccountList from "src/components/main/MyAccount/accountList";
-import AddAccountFrom from "src/components/main/AddAccount/addAcountForm";
+import AccountList from "src/components/MyAccount/accountList";
+import AddAccountFrom from "src/components/AddAccount/addAcountForm";
 
 import { useEffect, useState } from "react";
 import { handleGetMyAccount } from "src/lib/api/accont/index.api";

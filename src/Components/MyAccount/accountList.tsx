@@ -1,10 +1,10 @@
-import AccountItem from "src/components/main/MyAccount/accountItem";
+import AccountItem from "src/components/MyAccount/accountItem";
 
 import { ErrorToast } from "src/lib/SweetAlert";
 import { getUserInfo } from "src/lib/api/auth/index.api";
 import { useEffect, useState } from "react";
 
-import * as S from 'src/components/main/index.style';
+import * as S from 'src/components/MyAccount/index.style';
 
 const AccountList = (props) => {
   const [name, setName] = useState<string>('');
