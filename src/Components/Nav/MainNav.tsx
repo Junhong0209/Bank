@@ -4,7 +4,7 @@ import { GrUserSettings } from 'react-icons/gr'
 
 import * as S from 'src/components/Nav/nav.style';
 
-const mainNav = () => {
+const MainNav = () => {
 
   return (
     <S.KakaoHead className='static'>
@@ -17,10 +17,10 @@ const mainNav = () => {
             <S.NavItem to='/addAccount' title='계좌 개설하기'>
               계좌 개설
             </S.NavItem>
-            <S.NavItem>
+            <S.NavItem to='/main' title='계좌 추가하기'>
               계좌 추가
             </S.NavItem>
-            <S.NavItem>
+            <S.NavItem to='/main' title='프로필 보러가기'>
               <GrUserSettings />
             </S.NavItem>
           </S.NavItems>
@@ -30,4 +30,4 @@ const mainNav = () => {
   );
 }
 
-export default mainNav;
+export default MainNav;

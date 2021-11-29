@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Background = styled.form`
   position: fixed;
-  background-color: ${ColorPalette.kakao};
+  background-color: ${ColorPalette.white};
   padding-top: 80px;
   width: 100%;
   height: 100%;
@@ -94,5 +94,8 @@ export const SubmitButton = styled.button`
   height: 6vmin;
   border-radius: 10px;
   border: 0px;
-  background-color: ${ColorPalette.white};
+  font-size: 2vmin;
+  font-family: Yoon720, sans-serif;
+  font-weight: bold;
+  background-color: ${ColorPalette.kakao};
 `;

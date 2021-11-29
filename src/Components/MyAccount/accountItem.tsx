@@ -34,7 +34,7 @@ const accountItem = ({ myAccount }) => {
         <a href='/main' title='가져오러 가기'>가져오기</a>
       </S.AccountGet>
       <S.AccountTransfer>
-        <a href='/main' title='이체하러 가기'>이체</a>
+        <a href='/remittance' title='이체하러 가기'>이체</a>
       </S.AccountTransfer>
     </S.MyAccountContent>
   );
