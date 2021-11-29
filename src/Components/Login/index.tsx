@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { errorSwal } from "src/lib/SweetAlert/alert";
 import { ILoginInput, ILoginPost } from "src/types/auth/index.type";
-import { handleLogin } from "src/lib/api/auth/login.api";
+import { handleLogin } from "src/lib/api/auth/index.api";
 
 import * as S from 'src/components/Login/index.style';
 

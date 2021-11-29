@@ -1,5 +1,5 @@
 import { IRegisterInput, IRegisterPost } from "src/types/auth/index.type";
-import { handleRegister } from "src/lib/api/auth/register.api";
+import { handleRegister } from "src/lib/api/auth/index.api";
 import { errorSwal, succsessSwal } from "src/lib/SweetAlert/alert";
 import { useState, useCallback, useEffect } from "react";
 
