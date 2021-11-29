@@ -1,10 +1,10 @@
 import AddAccount from "src/components/AddMyAccount/addAccount"
-import Navbar from "src/components/Nav/navbar"
+import MainNav from "src/components/Nav/mainNav";
 
 const AddAccountPage = ({ history }) => {
   return (
     <>
-      <Navbar />
+      <MainNav />
       <AddAccount history={history} />
     </>
   );
