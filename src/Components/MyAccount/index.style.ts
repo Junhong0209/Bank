@@ -1,3 +1,4 @@
+import { ColorPalette } from "src/styles/colorPalette";
 import styled from "styled-components";
 
 export const AccountTitle = styled.div`
@@ -21,41 +22,35 @@ export const MyAccountContent = styled.div`
   width: 25vw;
   height: 12vh;
   margin-bottom: 4vh;
-  background: #F2F2F2;
+  background: ${ColorPalette.lightGrey};
   border-radius: 20px;
-`;
-
-export const MyAccountContentImg = styled.img`
-  position: relative;
-  height: 5vh;
-  top: 2.2vh;
-  left: 1vw;
-  line-height: 5vh;
-  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px ${ColorPalette.darkGray};
 `;
 
 export const MyAccountBankName = styled.div`
   position: relative;
-  left: 4vw;
-  top: -3.3vh;
+  left: 2vmin;
+  top: 1vmin;
   font-size: 2.5vmin;
+  font-family: Yoon750;
   font-weight: bold;
 `;
 
 export const MyAccountNumber = styled.div`
   position: relative;
-  left: 4vw;
-  top: -3.3vh;
+  left: 2vmin;
+  top: 1.3vmin;
   font-size: 1.5vmin;
   font-family: Yoon750;
   font-weight: bold;
 `;
 
 export const MyAccountBankMoney = styled.div`
-  position: relative;
-  float: left;
-  left: 8vmin;
-  top: -2vmin;
+  position: absolute;
+  width: 25vw;
+  top: 4.5vmin;
+  text-align: center;
+  font-size: 2.5vmin;
   font-weight: bold;
 `;
 

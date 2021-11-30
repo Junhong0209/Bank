@@ -8,4 +8,5 @@ export const ColorPalette: IColorPalette = {
   skyBlue: '#87CEEB',
   silver: '#BCBCBC',
   error: '#FF0000',
+  darkGray: '#A9A9A9'
 }

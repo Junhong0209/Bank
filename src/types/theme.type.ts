@@ -6,4 +6,5 @@ export interface IColorPalette {
   skyBlue: string;
   silver: string;
   error: string;
+  darkGray: string;
 }
