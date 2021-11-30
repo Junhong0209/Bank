@@ -91,7 +91,7 @@ export const AccountButtonForm = styled.div`
 export const AccountLink = styled(Link)`
   font-family: Yoon720, sans-serif;
   font-weight: bold;
-  font-size: 3vmin;
+  font-size: 2.3vmin;
   line-height: 5vmin;
   color: ${ColorPalette.black};
 `;

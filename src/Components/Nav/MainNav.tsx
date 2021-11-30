@@ -12,7 +12,7 @@ const MainNav = () => {
         <S.NavContent>
           <S.NavItems>
             <S.NavLogo>
-              <S.KakaoLogo href='/'><S.KakaoLogoImg src={Logo} alt='kakaobank' /></S.KakaoLogo>
+              <S.KakaoLogo href='/main'><S.KakaoLogoImg src={Logo} alt='kakaobank' /></S.KakaoLogo>
             </S.NavLogo>
             <S.NavItem to='/addAccount' title='계좌 개설하기'>
               계좌 개설
