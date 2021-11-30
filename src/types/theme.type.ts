@@ -7,4 +7,5 @@ export interface IColorPalette {
   silver: string;
   error: string;
   darkGray: string;
+  accountForm: string;
 }
