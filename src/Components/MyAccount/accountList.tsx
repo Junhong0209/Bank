@@ -22,6 +22,14 @@ const AccountList = (props) => {
   return (
     <>
       <S.AccountTitle>{name}(님)의 계좌</S.AccountTitle>
+      <S.AccountButtonForm>
+        <S.AccountRemittance>
+          <S.AccountLink to='/remittance'>송금하기</S.AccountLink>
+        </S.AccountRemittance>
+        <S.AccountGet>
+          <S.AccountLink to='/main'>가져오기</S.AccountLink>
+        </S.AccountGet>
+      </S.AccountButtonForm>
       <S.MyAccountList>
         {
           props.myAccountList && props.myAccountList.map((myAccount) => {

@@ -1,5 +1,7 @@
-import { ColorPalette } from "src/styles/colorPalette";
 import styled from "styled-components";
+
+import { ColorPalette } from "src/styles/colorPalette";
+import { Link } from "react-router-dom";
 
 export const AccountTitle = styled.div`
   position: relative;
@@ -14,7 +16,7 @@ export const MyAccountList = styled.div`
   position: relative;
   width: 25vw;
   left: 20vw;
-  top: 12vh;
+  top: 20vmin;
 `;
 
 export const MyAccountContent = styled.div`
@@ -22,7 +24,8 @@ export const MyAccountContent = styled.div`
   width: 25vw;
   height: 12vh;
   margin-bottom: 4vh;
-  background: ${ColorPalette.lightGrey};
+  color: ${ColorPalette.white};
+  background: ${ColorPalette.accountForm};
   border-radius: 20px;
   box-shadow: 3px 3px 3px 3px ${ColorPalette.darkGray};
 `;
@@ -41,55 +44,54 @@ export const MyAccountNumber = styled.div`
   left: 2vmin;
   top: 1.3vmin;
   font-size: 1.5vmin;
-  font-family: Yoon750;
+  font-family: Yoon720;
   font-weight: bold;
 `;
 
 export const MyAccountBankMoney = styled.div`
   position: absolute;
-  width: 25vw;
+  width: 22vmin;
+  left: 14vmin;
   top: 4.5vmin;
   text-align: center;
   font-size: 2.5vmin;
   font-weight: bold;
 `;
 
-export const AccountTransfer = styled.div`
+export const AccountRemittance = styled.span`
   position: relative;
-  left: 31vmin;
-  top: -4.5vmin;
-  width: 3.8vw;
-  height: 2.5vh;
-  background: #fff;
-  border-radius: 10px;
+  float: left;
+  width: 15vmin;
+  height: 5vmin;
   text-align: center;
-  line-height: 2.5vh;
-  font-family: 'Yoon720', sans-serif;
-  font-weight: bold;
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
+  border-radius: 10px;
+  background-color: ${ColorPalette.kakao};
+  box-shadow: 2px 2px 2px 2px ${ColorPalette.darkGray};
 `;
 
-export const AccountGet = styled.div`
+export const AccountGet = styled.span`
   position: relative;
-  left: 40vmin;
-  top: -2vmin;
-  width: 3.8vw;
-  height: 2.5vh;
-  background: #fff;
-  border-radius: 10px;
+  float: left;
+  width: 15vmin;
+  height: 5vmin;
   text-align: center;
-  line-height: 2.5vh;
-  font-family: 'Yoon720', sans-serif;
-  font-weight: bold;
+  border-radius: 10px;
+  background-color: ${ColorPalette.kakao};
+  margin-left: 10vmin;
+  box-shadow: 2px 2px 2px 2px ${ColorPalette.darkGray};
+`;
 
-  a {
-    position: relative;
-    top: -2vmin;
-    text-decoration: none;
-    color: #000;
-  }
+export const AccountButtonForm = styled.div`
+  position: absolute;
+  left: 20vmin;
+  top: 29vmin;
+  margin-left: 24vmin;
+`;
+
+export const AccountLink = styled(Link)`
+  font-family: Yoon720, sans-serif;
+  font-weight: bold;
+  font-size: 3vmin;
+  line-height: 5vmin;
+  color: ${ColorPalette.black};
 `;
