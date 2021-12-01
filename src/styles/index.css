@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  float: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
