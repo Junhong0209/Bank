@@ -22,7 +22,7 @@ const Main = ({ history }) => {
       <S.IntroMain>
         <S.IntroMainContent>
           <AddAccountFrom history={history} />
-          <AccountList myAccountList={myAccountList} />
+          <AccountList myAccountList={myAccountList} history={history} />
         </S.IntroMainContent>
       </S.IntroMain>
     </>

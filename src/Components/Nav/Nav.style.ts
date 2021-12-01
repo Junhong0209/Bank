@@ -50,7 +50,7 @@ export const NavLogo = styled.li`
 `;
 
 export const NavItem = styled(Link)`
-  height: 80px;
+  height: 40px;
   min-width: 80px;
   box-sizing: border-box;
   display: inline-block;

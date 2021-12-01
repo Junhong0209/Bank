@@ -1,6 +1,5 @@
 import useInput from "src/hooks/useInput";
 
-import { useEffect } from "react";
 import { handleOpenAccount } from "src/lib/api/accont/index.api";
 import { ErrorToast, SuccsessToast } from "src/lib/SweetAlert";
 
@@ -24,10 +23,6 @@ const AddAccount = ({ history }) => {
       ErrorToast('계좌 생성에 실패하였습니다');
     })
   }
-
-  useEffect(() => {
-    console.log(password);
-  }, [password]);
 
   return (
     <>

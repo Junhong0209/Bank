@@ -4,7 +4,7 @@ import makeAccountNumber from 'src/utils/makeAccountNumber';
 
 import * as S from "src/components/MyAccount/index.style";
 
-const accountItem = ({ myAccount }) => {
+const AccountItem = ({ myAccount }) => {
   const { accountId, money } = myAccount;
 
   return (
@@ -22,4 +22,4 @@ const accountItem = ({ myAccount }) => {
   );
 };
 
-export default accountItem;
+export default AccountItem;

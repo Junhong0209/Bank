@@ -50,10 +50,10 @@ export const MyAccountNumber = styled.div`
 
 export const MyAccountBankMoney = styled.div`
   position: absolute;
-  width: 22vmin;
+  width: 42vmin;
   left: 14vmin;
   top: 4.5vmin;
-  text-align: center;
+  text-align: start;
   font-size: 2.5vmin;
   font-weight: bold;
 `;
