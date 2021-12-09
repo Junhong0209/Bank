@@ -22,7 +22,7 @@ export const MyAccountList = styled.div`
 export const MyAccountContent = styled.div`
   position: relative;
   width: 25vw;
-  height: 12vh;
+  height: 16vh;
   margin-bottom: 4vh;
   color: ${ColorPalette.white};
   background: ${ColorPalette.accountForm};
@@ -33,7 +33,7 @@ export const MyAccountContent = styled.div`
 export const MyAccountBankName = styled.div`
   position: relative;
   left: 2vmin;
-  top: 1vmin;
+  top: 2.5vmin;
   font-size: 2.5vmin;
   font-family: Yoon750;
   font-weight: bold;
@@ -42,7 +42,7 @@ export const MyAccountBankName = styled.div`
 export const MyAccountNumber = styled.div`
   position: relative;
   left: 2vmin;
-  top: 1.3vmin;
+  top: 2.8vmin;
   font-size: 1.5vmin;
   font-family: Yoon720;
   font-weight: bold;
@@ -51,8 +51,8 @@ export const MyAccountNumber = styled.div`
 export const MyAccountBankMoney = styled.div`
   position: absolute;
   width: 42vmin;
-  left: 14vmin;
-  top: 4.5vmin;
+  left: 2vmin;
+  top: 10vmin;
   text-align: start;
   font-size: 2.5vmin;
   font-weight: bold;
